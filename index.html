@@ -1776,5 +1776,24 @@
         // Set initial parallax state
         checkParallax();
     </script>
+
+
+<audio id="player" src="./sound/Warriors_of_Light_2.mp3" autoplay muted loop></audio>
+
+
+<script>
+const player = document.getElementById("player");
+player.volume = 0.2; // Set volume to 20% (range: 0.0 to 1.0)
+
+function tryPlay() {
+    player.muted = false;
+    player.play().catch(() => {});
+}
+
+window.addEventListener("scroll", tryPlay, { once: true });
+window.addEventListener("click", tryPlay, { once: true });
+window.addEventListener("touchstart", tryPlay, { once: true });
+</script>
+    
 </body>
 </html>
